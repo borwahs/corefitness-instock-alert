@@ -1,0 +1,7 @@
+{
+  "name": "corefitness-instock-alert",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rob Shaw <rob@borwahs.com>",
+  "license": "MIT"
+}
