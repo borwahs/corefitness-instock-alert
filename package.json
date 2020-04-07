@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Rob Shaw <rob@borwahs.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "twilio": "^3.42.0"
+  }
 }
