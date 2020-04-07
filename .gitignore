@@ -1,0 +1,16 @@
+### node.js
+# logging
+logs
+*.log
+
+# yarn
+.yarn-integrity
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+node_modules/
+
+### macOS
+# general
+.DS_Store
