@@ -7,4 +7,5 @@ module.exports = {
     fromPhoneNumber: process.env.TWILIO_FROM_NUMBER,
   },
   toPhoneNumbers: process.env.TO_NUMBERS.split(',').map((n) => n.trim()),
+  intervalInMinutes: Number(process.env.INTERVAL_IN_MINUTES),
 };

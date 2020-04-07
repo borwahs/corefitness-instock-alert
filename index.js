@@ -1,6 +1,11 @@
 const cheerio = require('cheerio');
 const got = require('got');
 
+const config = require('./config');
+
+const INTERVAL_TO_MINUTES = 60 * 1000;
+const { intervalInMinutes } = config;
+
 async function checkStock() {
   try {
     const response = await got(
@@ -22,7 +27,15 @@ async function checkStock() {
   }
 }
 
-(async function () {
-  const isInStock = await checkStock();
-  console.log(isInStock);
+(function () {
+  setInterval(async () => {
+    const isInStock = await checkStock();
+    if (isInStock) {
+      console.log(`not in stock yet -- ${Date.now()}`);
+      return;
+    }
+
+    console.log(`in stock!!! -- ${Date.now()}`);
+    process.exit(1);
+  }, INTERVAL_TO_MINUTES * intervalInMinutes);
 })();
