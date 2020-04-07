@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Rob Shaw <rob@borwahs.com>",
   "license": "MIT",
+  "scripts": {
+    "format": "prettier --write **/*.js"
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "twilio": "^3.42.0"
