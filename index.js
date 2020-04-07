@@ -2,6 +2,7 @@ const cheerio = require('cheerio');
 const got = require('got');
 
 const config = require('./config');
+const sms = require('./sms');
 
 const INTERVAL_TO_MINUTES = 60 * 1000;
 const { intervalInMinutes } = config;
@@ -36,6 +37,10 @@ async function checkStock() {
     }
 
     console.log(`in stock!!! -- ${Date.now()}`);
+    await sms.sendInStockAlert(
+      'Core Fitness Dumbbells in Stock!!\n\nhttps://www.corehomefitness.com/products/core-home-fitness-adjustable-dumbbell-set'
+    );
+
     process.exit(1);
   }, INTERVAL_TO_MINUTES * intervalInMinutes);
 })();
