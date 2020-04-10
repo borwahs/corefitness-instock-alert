@@ -30,8 +30,8 @@ async function checkStock() {
 
 (function () {
   setInterval(async () => {
-    const isInStock = await checkStock();
-    if (isInStock) {
+    const { isInStock } = await checkStock();
+    if (!isInStock) {
       console.log(`not in stock yet -- ${Date.now()}`);
       return;
     }
